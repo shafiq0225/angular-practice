@@ -15,7 +15,7 @@ export class AppComponent {
   includeNumbers = false;
   includeSymbols = false;
 
-  onButtonClicked() {
+  onButtonClick() {
     const numbers = "1234567890";
     const letters = "abcdefghijklmnopqrstuvwxyz";
     const symbols = "!@#$%^&*()";
@@ -60,11 +60,15 @@ export class AppComponent {
   }
 
   onChangeLength(event: Event) {
-    const value = (event.target as HTMLInputElement).value
+
+    const value = (event.target as HTMLInputElement).value;
+
     const parsedValue = parseInt(value);
 
     if (!isNaN(parsedValue)) {
       this.length = parsedValue;
+    } else {
+      this.length = 0;
     }
   }
 
